@@ -1,0 +1,38 @@
+{
+    "manifestVersion": 1,
+    "id": "pipelinedecorator",
+    "name": "SonarQube Decorator Example",
+    "version": "0.0.1",
+    "publisher": "MarcusFelling",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "SonarQube Decorator Example",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
+    "files": [
+        {
+            "path": "SonarQubeDecorator.yml.yml",
+            "addressable": true,
+            "contentType": "text/plain"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "my-required-task",
+            "type": "ms.azure-pipelines.pipeline-decorator",
+            "targets": [
+                "ms.azure-pipelines-agent-job.post-job-tasks"
+            ],
+            "properties": {
+                "template": "SonarQubeDecorator.yml.yml"
+            }
+        }
+    ]
+}
