@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "47626ecb-4b9b-48ab-99d2-bfc6a5ea099f",
+    "name": "pipelinedecorator",
+    "friendlyName": "pipelinedecorator",
+    "description": "pipeline decorator",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Marcus Felling",
+    "version": {
+        "Major": 0,
+        "Minor": 0,
+        "Patch": 3
+    },
+    "instanceNameFormat": "",
+    "execution": {
+        "Node10": {
+            "target": "index.js"
+        }
+    }
+}

@@ -2,8 +2,8 @@
     "manifestVersion": 1,
     "id": "pipelinedecorator",
     "name": "SonarQube Decorator Example",
-    "version": "0.0.1",
-    "publisher": "MarcusFelling",
+    "version": "0.0.3",
+    "publisher": "MarcusFelling-Blog",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
@@ -18,7 +18,7 @@
     },
     "files": [
         {
-            "path": "SonarQubeDecorator.yml.yml",
+            "path": "SonarQubeDecorator.yml",
             "addressable": true,
             "contentType": "text/plain"
         }
