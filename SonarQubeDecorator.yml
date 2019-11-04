@@ -1,5 +1,4 @@
 steps:
-  - task: CmdLine@2
-    displayName: 'Run my script (injected from decorator)'
-    inputs:
-      script: dir
+- ${{ if eq(resources.repositories['self'].ref, resources.repositories['self'].defaultBranch) }}:
+- task: SonarSource.sonarqube.6D01813A-9589-4B15-8491-8164AEB38055.SonarQubeAnalyze@4
+  displayName: 'Run Code Analysis (injected from decorator)'
