@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "pipelinedecorator",
     "name": "SonarQube Decorator Example",
-    "version": "0.0.4",
+    "version": "1.0.2",
     "publisher": "MarcusFelling-Blog",
     "targets": [
         {
@@ -17,22 +17,37 @@
         "default": "images/extension-icon.png"        
     },
     "files": [
-        {
-            "path": "SonarQubeDecorator.yml",
-            "addressable": true,
-            "contentType": "text/plain"
-        }
+      {
+        "path": "SonarQubeDecoratorPrepare.yml",
+        "addressable": true,
+        "contentType": "text/plain"
+      },
+      {
+        "path": "SonarQubeDecoratorAnalysis.yml",
+        "addressable": true,
+        "contentType": "text/plain"
+      }
     ],
     "contributions": [
-        {
-            "id": "my-required-task",
-            "type": "ms.azure-pipelines.pipeline-decorator",
-            "targets": [
-                "ms.azure-pipelines-agent-job.post-job-tasks"
-            ],
-            "properties": {
-                "template": "SonarQubeDecorator.yml"
-            }
+      {
+        "id": "sonarqube-prepare",
+        "type": "ms.azure-pipelines.pipeline-decorator",
+        "targets": [
+          "ms.azure-pipelines-agent-job.pre-job-tasks"
+        ],
+        "properties": {
+          "template": "SonarQubeDecoratorPrepare.yml"
         }
+      },
+      {
+        "id": "sonarqube-analysis",
+        "type": "ms.azure-pipelines.pipeline-decorator",
+        "targets": [
+          "ms.azure-pipelines-agent-job.post-job-tasks"
+        ],
+        "properties": {
+          "template": "SonarQubeDecoratorAnalysis.yml"
+        }
+      }
     ]
 }

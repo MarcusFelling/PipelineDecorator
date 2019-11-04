@@ -1,0 +1,4 @@
+steps:
+- ${{ if eq(resources.repositories['self'].ref, resources.repositories['self'].defaultBranch) }}:
+    - task: SonarQubeAnalyze@4
+    displayName: 'Run Code Analysis (injected from decorator)'

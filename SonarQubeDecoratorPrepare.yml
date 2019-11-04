@@ -1,0 +1,10 @@
+steps:
+- ${{ if eq(resources.repositories['self'].ref, resources.repositories['self'].defaultBranch) }}:
+    - task: SonarQubePrepare@4
+      displayName: 'Prepare Code Analysis (injected from decorator)'
+      inputs:
+        SonarQube: 'My SonarQube Server'
+        scannerMode: 'MSBuild'
+        projectKey: '$(Build.DefinitionName)'
+        projectName: '$(Build.DefinitionName)'
+        projectVersion: '$(Build.BuildId)'

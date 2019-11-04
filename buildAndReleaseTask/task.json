@@ -8,9 +8,9 @@
     "category": "Utility",
     "author": "Marcus Felling",
     "version": {
-        "Major": 0,
+        "Major": 1,
         "Minor": 0,
-        "Patch": 3
+        "Patch": 0
     },
     "instanceNameFormat": "",
     "execution": {
