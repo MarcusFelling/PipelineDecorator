@@ -31,7 +31,7 @@
                 "ms.azure-pipelines-agent-job.post-job-tasks"
             ],
             "properties": {
-                "template": "SonarQubeDecorator.yml.yml"
+                "template": "SonarQubeDecorator.yml"
             }
         }
     ]
