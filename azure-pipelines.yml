@@ -15,11 +15,10 @@ steps:
   inputs:
     command: 'install'
     workingDir: 'buildAndReleaseTask'
-- task: Npm@1
-  displayName: npm i -g tfx-cli
+- task: CmdLine@2
+  displayName: Globally install TFX
   inputs:
-    command: 'custom'
-    customCommand: 'i -g tfx-cli'
+    script: 'sudo npm i -g tfx-cli'
 - task: CmdLine@2
   displayName: tfx extension create
   inputs:
