@@ -23,4 +23,15 @@ steps:
   displayName: tfx extension create
   inputs:
     script: 'tfx extension create --manifest-globs vss-extension.json'
+- task: CopyFiles@2
+  displayName: Copy VSIX to artifact staging directory
+  inputs:
+    Contents: '*vsix'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  displayName: Publish VSIX as artifact
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 
