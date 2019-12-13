@@ -11,11 +11,17 @@ pool:
 
 steps:
 - task: Npm@1
+  displayName: npm install
   inputs:
     command: 'install'
     workingDir: 'buildAndReleaseTask'
-
 - task: Npm@1
+  displayName: npm i -g tfx-cli
   inputs:
     command: 'custom'
-    customCommand: 'npm i -g tfx-cli'
+    customCommand: 'i -g tfx-cli'
+- task: CmdLine@2
+  displayName: tfx extension create
+  inputs:
+    script: 'tfx extension create --manifest-globs vss-extension.json'
+
